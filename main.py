@@ -8,6 +8,7 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}\r\nScreen height: {SCREEN_HEIGHT}")
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    # Create player object
     player_object = player.Player((SCREEN_WIDTH // 2), (SCREEN_HEIGHT // 2))
     pygame.time.Clock()
     dt = 0
@@ -18,7 +19,7 @@ def main():
         log_state()
         # Create and fill background
         screen.fill("black")
-        # Create and draw player object
+        # Update and draw player object
         player_object.update(dt)
         player_object.draw(screen)
         pygame.display.flip()
